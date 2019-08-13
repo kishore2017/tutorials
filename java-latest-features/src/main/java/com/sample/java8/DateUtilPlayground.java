@@ -30,48 +30,48 @@ import java.time.format.DateTimeFormatter;
  */
 public class DateUtilPlayground {
 
-	public static void main(String[] args) {
-		runDateUtils();
-	}
+    public static void main(String[] args) {
+        runDateUtils();
+    }
 
-	private static void runDateUtils() {
-		System.out.println("################ Date Utils Example Started ###############");
+    private static void runDateUtils() {
+        System.out.println("################ Date Utils Example Started ###############");
 
-		// By default LocalDate uses ISO Format "yyyy-mm-dd"
-		System.out.println(LocalDate.now());
-		System.out.println(LocalDate.of(2019, 8, 13));
-		System.out.println(LocalDate.parse("2019-08-13"));
-		System.out.println();
+        // By default LocalDate uses ISO Format "yyyy-mm-dd"
+        System.out.println(LocalDate.now());
+        System.out.println(LocalDate.of(2019, 8, 13));
+        System.out.println(LocalDate.parse("2019-08-13"));
+        System.out.println();
 
-		// the current time using the system clock and default time-zone, not null
-		System.out.println(LocalTime.now());
-		System.out.println(LocalTime.of(23, 8, 13));
-		System.out.println(LocalTime.parse("10:15:30"));
-		System.out.println();
+        // the current time using the system clock and default time-zone, not null
+        System.out.println(LocalTime.now());
+        System.out.println(LocalTime.of(23, 8, 13));
+        System.out.println(LocalTime.parse("10:15:30"));
+        System.out.println();
 
-		// LocalDateTime default format 2007-12-03T10:15:30
-		System.out.println(LocalDateTime.now());
-		System.out.println(LocalDateTime.of(2019, 8, 13, 12, 12));
-		System.out.println(LocalDateTime.parse("2019-08-13T12:12:00"));
-		System.out.println();
+        // LocalDateTime default format 2007-12-03T10:15:30
+        System.out.println(LocalDateTime.now());
+        System.out.println(LocalDateTime.of(2019, 8, 13, 12, 12));
+        System.out.println(LocalDateTime.parse("2019-08-13T12:12:00"));
+        System.out.println();
 
-		// DateFormatter
-		String date = "2017-31-08 12:30:54";
-		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-dd-MM HH:mm:ss");
-		LocalDateTime dateTime = LocalDateTime.parse(date, format);
-		System.out.println(dateTime);
-		System.out.println();
+        // DateFormatter
+        String date = "2017-31-08 12:30:54";
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-dd-MM HH:mm:ss");
+        LocalDateTime dateTime = LocalDateTime.parse(date, format);
+        System.out.println(dateTime);
+        System.out.println();
 
-		// ZonedDate
-		ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("America/Indiana/Indianapolis"));
-		LocalDate localDate = zonedDateTime.toLocalDate(); // gets you the date without time
-		ZoneId zoneId = zonedDateTime.getZone(); // gets you the timezone
-		System.out.println(zoneId);
-		System.out.println(localDate);
+        // ZonedDate
+        ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("America/Indiana/Indianapolis"));
+        LocalDate localDate = zonedDateTime.toLocalDate(); // gets you the date without time
+        ZoneId zoneId = zonedDateTime.getZone(); // gets you the timezone
+        System.out.println(zoneId);
+        System.out.println(localDate);
 
-		System.out.println("################ Date Utils Example Ended   ###############");
-		System.out.println();
+        System.out.println("################ Date Utils Example Ended   ###############");
+        System.out.println();
 
-	}
+    }
 
 }
