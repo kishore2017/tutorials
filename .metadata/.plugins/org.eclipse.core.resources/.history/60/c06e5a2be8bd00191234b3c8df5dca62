@@ -1,0 +1,15 @@
+package com.sample.java8;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class StreamPlayground {
+
+	static int[] intArray = IntStream.rangeClosed(1, 10).toArray();
+	static List<Integer> intStringArray = IntStream.range(0, 50)
+		    						.boxed().collect(Collectors.toList());
+	
+	
+
+}

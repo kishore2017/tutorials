@@ -1,0 +1,22 @@
+package com.sample.java8;
+
+public class LambdaPlayground {
+	
+	/**
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		run_Filter();
+	}
+	
+	//Filter example
+	private static void run_Filter() {
+		System.out.println("################Filter Example Started###############");
+		StreamPlayground.intStringArray.stream()
+			.filter(e -> e/2 == 0)
+			.forEach(System.out::println);
+		System.out.println("################Filter Example Ended###############");
+
+	}
+}

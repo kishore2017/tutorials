@@ -1,0 +1,51 @@
+package com.sample.java8;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+/**
+ * Issues with the Existing Date/Time APIs(Java 7 and Below)
+ * Thread Safety – The Date and Calendar classes are not thread safe, leaving developers to deal with the headache of hard to debug concurrency issues 
+ * and to write additional code to handle thread safety. On the contrary the new Date and Time APIs introduced in Java 8 are immutable and thread safe, 
+ * thus taking that concurrency headache away from developers.
+ * 
+ * APIs Design and Ease of Understanding – The Date and Calendar APIs are poorly designed with inadequate methods to perform day-to-day operations. 
+ * The new Date/Time APIs is ISO centric and follows consistent domain models for date, time, duration and periods. There are a wide variety of utility methods 
+ * that support the commonest operations.
+ * 
+ * ZonedDate and Time – Developers had to write additional logic to handle timezone logic with the old APIs, whereas with the new APIs, handling of timezone can 
+ * be done with Local and ZonedDate/Time APIs.
+
+ * @author kishore
+ *
+ */
+public class DateUtilPlayground {
+
+	public static void main(String[] args) {
+		runDateUtils();
+	}
+	
+	private static void runDateUtils() {
+		System.out.println("################ LocalDate Example Started      ###############");
+		
+        String.format("LocalDate.now(): %15.8f", LocalDate.now()); 
+
+		//By default LocalDate uses ISO Format "yyyy-mm-dd"
+		System.out.println(String.format("LocalDate.now(): %15.8s", LocalDate.now()));
+		System.out.println("LocalDate.of(2019, 8, 13): \t" + LocalDate.of(2019, 8, 13));
+		System.out.println("LocalDate.parse(\"2019-08-13\"): \t" + LocalDate.parse("2019-08-13"));
+		System.out.println("################ LocalDate Example Ended         ###############");
+		System.out.println();
+		
+		System.out.println("################ LocalDateTime Example Started   ###############");
+		//LocalDateTime default format 2007-12-03T10:15:30
+		System.out.println("LocalDateTime.now(): \t \t \t \t" + LocalDateTime.now());
+		System.out.println("LocalDateTime.of(2019, 8, 13, 12, 12) : \t" + LocalDateTime.of(2019, 8, 13, 12, 12));
+		System.out.println("LocalDateTime.parse(\"2019-08-13T12:12:00\"): \t" + LocalDateTime.parse("2019-08-13T12:12:00"));
+
+		System.out.println("################ LocalDateTime Example Ended     ###############");
+		System.out.println();
+
+	}
+
+}

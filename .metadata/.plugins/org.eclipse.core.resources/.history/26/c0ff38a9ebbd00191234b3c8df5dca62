@@ -1,0 +1,47 @@
+package com.sample.java8;
+
+public class LambdaPlayground {
+	
+	public static void main(String[] args) {
+		run_Filter();
+		run_Map();
+	}
+	
+	private static void run_Filter() {
+		System.out.println("################ Filter Example Started ###############");
+		
+		StreamPlayground.intStringArray.stream()
+			.filter(e -> e%2 == 0)
+			.forEach(System.out::println);
+		
+		System.out.println("################ Filter Example Ended ###############");
+		System.out.println();
+
+	}
+	
+	private static void run_Map() {
+		System.out.println("################ Map Example Started ###############");
+		
+		StreamPlayground.intStringArray.stream()
+			.map(e -> e*2)
+			.forEach(System.out::println);
+		
+		System.out.println("################ Map Example Ended ###############");
+		System.out.println();
+
+	}
+
+	private static void run_Reduce() {
+		System.out.println("################ Reduce Example Started ###############");
+		
+		StreamPlayground.intStringArray.stream()
+            .reduce((e1, e2) -> e1 + e2)
+            .map(e -> e)
+			.forEach(System.out::println);
+		
+		System.out.println("################ Reduce Example Ended ###############");
+		System.out.println();
+
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.sample.java8;
+
+/**
+ * 
+ * @author kishore
+ *
+ */
+public class LambdaPlayground {
+	
+	/**
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+	}
+}
